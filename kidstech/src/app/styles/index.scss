@@ -1,5 +1,8 @@
 @import "./themes/light.scss";
 
 body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  
   background-color: var(--bg-color);
 }
