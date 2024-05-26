@@ -1,4 +1,4 @@
-export type TagServer = string
+export type TagServer = string;
 
 export type CourseServer = {
   name: string,

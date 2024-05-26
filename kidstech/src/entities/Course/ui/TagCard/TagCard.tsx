@@ -5,7 +5,7 @@ import cls from './TagCard.module.scss';
 
 type Props = {
   className?: string;
-  item: Tag
+  item: Tag;
 }
 
 export const TagCard = (props: Props) => {
@@ -16,4 +16,4 @@ export const TagCard = (props: Props) => {
       {item.name}
     </div>
   );
-}
+};

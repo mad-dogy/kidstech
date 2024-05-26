@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { CourseCard, Tag } from '@/entities/Course';
+import { CourseCard } from '@/entities/Course';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { useCourseList } from '../model/hooks/useCourseList';
@@ -8,13 +8,13 @@ import cls from './CourseList.module.scss';
 
 type Props = {
   className?: string;
-  selectedTag?: Tag
+  selectedTagId?: string
 }
 
 export const CourseList = memo((props: Props) => {
-  const { className, selectedTag } = props;
+  const { className, selectedTagId } = props;
 
-  const { courses } = useCourseList(selectedTag);
+  const { courses } = useCourseList(selectedTagId);
   
   return (
     <div className={classNames(cls.CourseList, {}, [className])}>

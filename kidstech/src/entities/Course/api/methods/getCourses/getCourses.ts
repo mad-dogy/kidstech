@@ -1,5 +1,7 @@
 import { api } from '@/shared/api';
 
+import { getCoursesByTag } from '../../helpers/getCoursesByTag';
+import { allThemesTagId } from '../../../model/constants/tags';
 import { Course } from '../../../model/types/course.entity';
 import { CourseServer } from '../../types/course.server';
 import { RequestDto } from './request.dto';
@@ -11,15 +13,15 @@ export const getCourses = async (request?: Request): Promise<Array<Course>> => {
 
   const response = await api.get<Array<CourseServer>>('/courses.json');
 
-  const filterResponse = response.data.filter(item => {
-    if(!tag) {
-      return true;
-    }
+  if(!tag || tag === allThemesTagId) {
+    const courses = ResponseDto(response.data);
 
-    return item.tags.includes(tag);
-  })
+    return courses;
+  }
 
-  const courses = ResponseDto(filterResponse);
+  const serverCoursesByTag = getCoursesByTag(response.data, tag);
+
+  const courses = ResponseDto(serverCoursesByTag);
 
   return courses;
 };
