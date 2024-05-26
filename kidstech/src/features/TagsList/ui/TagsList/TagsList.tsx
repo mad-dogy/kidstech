@@ -4,7 +4,6 @@ import { useTagsList } from '../../model/hooks/useTagsList';
 import { TagsListItem } from '../TagsListItem/TagsListItem';
 
 import cls from './TagsList.module.scss';
-import { VStack } from '@/shared/ui/Stack';
 
 type Props = {
   className?: string;
@@ -18,10 +17,10 @@ export const TagsList = (props: Props) => {
   const { tags } = useTagsList();
 
   return (
-    <VStack className={classNames(cls.TagsList, {}, [className])} gap={8}>
+    <div className={classNames(cls.TagsList, {}, [className])}>
       {tags?.map(item => (
         <TagsListItem item={item} key={item.id} onTagChange={onTagChange} selectedTagId={selectedTagId} />
       ))}
-    </VStack>
+    </div>
   );
 }

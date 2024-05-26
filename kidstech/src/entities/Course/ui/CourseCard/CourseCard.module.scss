@@ -1,3 +1,24 @@
 .CourseCard {
-  
+  border-radius: 18px;
+  width: 100%;
+  box-shadow: 0px 10px 13px -4px #23235F30;
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px 18px 0 0;
+    height: 162px;
+
+    .image {
+      width: 144px;
+      height: 144px;
+    }
+  }
+
+  .name {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 800;
+  }
 }

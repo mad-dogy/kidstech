@@ -13,7 +13,12 @@ export const CourseCard = (props: Props) => {
 
   return (
     <div className={classNames(cls.CourseCard, {}, [className])}>
-      {item.name}
+      <div className={cls.imageContainer} style={{ backgroundColor: item.bgColor }}>
+        <img src={item.image} alt={`image ${item.name}`} className={cls.image} />
+      </div>
+      <div className={cls.name}>
+        {item.name}
+      </div>
     </div>
   );
 }

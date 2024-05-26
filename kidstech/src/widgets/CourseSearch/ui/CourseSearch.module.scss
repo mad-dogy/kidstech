@@ -1,3 +1,11 @@
 .CourseSearch {
-  
+  .tagsContainer {
+    width: 264px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 18px;
+
+    .tags {
+      padding: 10px
+    }
+  }
 }

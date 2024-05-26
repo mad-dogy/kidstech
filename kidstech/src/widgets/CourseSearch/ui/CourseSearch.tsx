@@ -21,8 +21,11 @@ export const CourseSearch = (props: Props) => {
   }, []);
 
   return (
-    <HStack className={classNames(cls.CourseSearch, {}, [className])} gap={32}>
-      <TagsList selectedTagId={selectedTagId} onTagChange={onTagChange} />
+    <HStack className={classNames(cls.CourseSearch, {}, [className])} gap={24}>
+      <div className={cls.tagsContainer}>
+        <TagsList selectedTagId={selectedTagId} onTagChange={onTagChange} className={cls.tags} />
+      </div>
+      
       <CourseList selectedTagId={selectedTagId} />
     </HStack>
   );

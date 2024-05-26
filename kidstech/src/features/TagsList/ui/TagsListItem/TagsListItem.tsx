@@ -25,8 +25,8 @@ export const TagsListItem = (props: Props) => {
   };
 
   return (
-    <button onClick={onTagChangeHandler} className={classNames(cls.TagsListItem, mods)} >
+    <div onClick={onTagChangeHandler} className={classNames(cls.TagsListItem, mods)} >
       <TagCard key={item.id} item={item} />
-    </button> 
+    </div> 
   );
 }
