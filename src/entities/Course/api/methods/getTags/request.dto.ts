@@ -1,3 +1,3 @@
-import { Request, RequestServer } from './types';
+import { RequestServer } from './types';
 
-export const RequestDto = (request?: Request): RequestServer => {};
+export const RequestDto = (): RequestServer => {};
