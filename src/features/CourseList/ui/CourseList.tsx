@@ -23,7 +23,7 @@ export const CourseList = memo((props: Props) => {
   const containerClassName = classNames(cls.CourseList, {}, [className]);
 
   if (loading) {
-    return <Skeleton className={containerClassName} />;
+    return <Skeleton className={classNames(containerClassName, {}, [cls.loader])} />;
   }
 
   if (error) {

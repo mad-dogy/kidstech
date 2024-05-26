@@ -4,6 +4,8 @@
 
 Test task for LogicLike.
 
+[Deploy link.](https://mad-dogy.github.io/kidstech/dist/)
+
 ## Get started
 
 ```bash
