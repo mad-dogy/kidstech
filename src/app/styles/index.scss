@@ -1,0 +1,10 @@
+@import './reset.scss';
+@import './themes/light.scss';
+@import './themes/dark.scss';
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+
+  background-color: var(--bg-color);
+}

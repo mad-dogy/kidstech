@@ -1,0 +1,12 @@
+.TagsListItem {
+  width: 100%;
+  padding: 8px 10px;
+  color: var(--inverted-bg-color);
+
+  cursor: pointer;
+
+  &.active {
+    background-color: var(--primary-color);
+    color: var(--inverted-primary-color);
+  }
+}

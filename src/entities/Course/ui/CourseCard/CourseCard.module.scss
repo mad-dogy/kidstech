@@ -1,0 +1,22 @@
+.CourseCard {
+  box-shadow: 0px 10px 13px -4px var(--shadow-color);
+
+  .imageContainer {
+    border-radius: 18px 18px 0 0;
+    height: 162px;
+
+    .image {
+      width: 144px;
+      height: 144px;
+    }
+  }
+
+  .name {
+    font-size: 18px;
+    font-weight: 800;
+
+    line-height: 18px;
+    padding: 12px 18px 18px 18px;
+    color: var(--inverted-bg-color);
+  }
+}
