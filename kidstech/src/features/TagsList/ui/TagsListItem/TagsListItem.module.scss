@@ -1,6 +1,6 @@
 .TagsListItem {
   &.active {
-    background-color: #5FBF77;
-    color: #FFF;
+    background-color: var(--primary-color);
+    color: var(--inverted-primary-color);
   } 
 }
