@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+# KidStech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Test task for LogicLike.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Get started
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname
-  }
-};
+```bash
+	yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Dev Scripts
+- Start proj in dev mode using vite.
+```bash
+  npm run dev
+```
+
+### Build Scripts
+- Generate bundle.
+```bash
+  npm run build
+```
+
+## Architecture
+
+App implemented using [feature slices design](https://feature-sliced.design/) methodology.
+
+## Utils
+
+### EsLint
+
+- Check Eslint errors.
+```bash
+	npm run lint
+```
+
+### Prettier
+
+eslint + prettier for formatting code [https://prettier.io/docs/en/integrating-with-linters.html](using eslint-plugin-prettier).
+
+> duplicate prettier config in the .eslintrc.js rules "prettier/prettier" to avoid conflicts between global config and project.
+> highly recommended to setup your IDE to run lint:fix command on save file. (Current project has set up for vsCode, no additional actions need not).
+
+### App Screenshots
+
+![App screenshot](ReadmeResources/appScreenshot.png)
