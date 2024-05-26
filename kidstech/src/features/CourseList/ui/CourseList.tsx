@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { CourseCard } from '@/entities/Course';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Grid } from '@/shared/ui/Grid';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 import { courseListColumnAmount } from '../model/constants/courseList';
 import { useCourseList } from '../model/hooks/useCourseList';
@@ -17,7 +18,17 @@ type Props = {
 export const CourseList = memo((props: Props) => {
   const { className, selectedTagId } = props;
 
-  const { courses } = useCourseList(selectedTagId);
+  const { loading, error, courses } = useCourseList(selectedTagId);
+
+  const containerClassName = classNames(cls.CourseList, {}, [className]);
+
+  if (loading) {
+    return <Skeleton className={containerClassName} />;
+  }
+
+  if (error) {
+    return <div className={containerClassName}>{error}</div>;
+  }
 
   return (
     <Grid
