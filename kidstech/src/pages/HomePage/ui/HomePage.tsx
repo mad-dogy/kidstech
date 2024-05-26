@@ -1,18 +1,12 @@
 import { CourseSearch } from '@/widgets/CourseSearch';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widgets/Page';
 
 import cls from './HomePage.module.scss';
 
-type Props = {
-  className?: string;
-}
-
-export const HomePage = (props: Props) => {
-  const { className } = props;
-
+export const HomePage = () => {
   return (
-    <div className={classNames(cls.HomePage, {}, [className])}>
+    <Page className={cls.HomePage}>
       <CourseSearch />
-    </div>
+    </Page>
   );
-}
+};

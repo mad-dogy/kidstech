@@ -1,26 +1,29 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Tag } from '@/entities/Course';
 
 import { useTagsList } from '../../model/hooks/useTagsList';
 import { TagsListItem } from '../TagsListItem/TagsListItem';
 
 import cls from './TagsList.module.scss';
+import { memo } from 'react';
+import { Card } from '@/shared/ui/Card';
 
 type Props = {
   className?: string;
   selectedTagId: string;
-  onTagChange?: (tagId: string) => void;
+  onTagChange?: (tag: Tag) => void;
 }
 
-export const TagsList = (props: Props) => {
+export const TagsList = memo((props: Props) => {
   const { className, selectedTagId, onTagChange } = props;
 
   const { tags } = useTagsList();
 
   return (
-    <div className={classNames(cls.TagsList, {}, [className])}>
+    <Card className={classNames(cls.TagsList, {}, [className])}>
       {tags?.map(item => (
-        <TagsListItem item={item} key={item.id} onTagChange={onTagChange} selectedTagId={selectedTagId} />
+        <TagsListItem key={item.id} item={item} onTagChange={onTagChange} selectedTagId={selectedTagId} />
       ))}
-    </div>
+    </Card>
   );
-}
+});

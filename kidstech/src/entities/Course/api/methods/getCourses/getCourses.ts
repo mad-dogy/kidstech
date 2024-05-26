@@ -13,7 +13,9 @@ export const getCourses = async (request?: Request): Promise<Array<Course>> => {
 
   const response = await api.get<Array<CourseServer>>('/courses.json');
 
-  if(!tag || tag === allThemesTagId) {
+  const skipTagFilter = !tag || tag === allThemesTagId
+
+  if(skipTagFilter) {
     const courses = ResponseDto(response.data);
 
     return courses;

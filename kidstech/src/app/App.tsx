@@ -1,6 +1,9 @@
 import { useLayoutEffect } from 'react';
+
 import { HomePage } from '@/pages/HomePage';
-import { useTheme } from '@/shared/providers/ThemeProvider';
+import { ThemeProvider, useTheme } from '@/shared/providers/ThemeProvider';
+
+import '@/app/styles/index.scss';
 
 export const App = () => {
   const { theme } = useTheme();
@@ -10,6 +13,8 @@ export const App = () => {
   }, [theme]);
 
   return (
-    <HomePage />
+    <ThemeProvider>
+      <HomePage />
+    </ThemeProvider>
   )
 }

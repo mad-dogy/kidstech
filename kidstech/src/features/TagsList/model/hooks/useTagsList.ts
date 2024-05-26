@@ -6,13 +6,13 @@ export const useTagsList = () => {
   const [tags, setTags] = useState<Tag[]>();
 
   useEffect(() => {
-    async function getCourses() {
+    async function getTags() {
       const tags = await CourseController.getTags();
 
       setTags(tags);
     }
 
-    getCourses();
+    getTags();
   }, []);
 
   return {

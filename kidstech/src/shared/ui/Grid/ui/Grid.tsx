@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, memo } from 'react';
 
 import {
   GridAlign,
@@ -27,7 +27,7 @@ export type GridProps = DivProps & {
   justifyContent?: GridJustify;
 };
 
-export const Grid = (props: GridProps) => {
+export const Grid = memo((props: GridProps) => {
   const {
     className,
     children,
@@ -70,4 +70,4 @@ export const Grid = (props: GridProps) => {
       {children}
     </div>
   );
-};
+});

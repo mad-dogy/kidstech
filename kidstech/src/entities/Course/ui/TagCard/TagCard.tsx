@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { Tag } from '../../model/types/course.entity';
@@ -8,7 +10,7 @@ type Props = {
   item: Tag;
 }
 
-export const TagCard = (props: Props) => {
+export const TagCard = memo((props: Props) => {
   const { className, item } = props;
 
   return (
@@ -16,4 +18,4 @@ export const TagCard = (props: Props) => {
       {item.name}
     </div>
   );
-};
+});

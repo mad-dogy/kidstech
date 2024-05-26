@@ -1,6 +1,7 @@
-import { useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 
 import { Tag, TagCard } from '@/entities/Course';
+import { Card } from '@/shared/ui/Card';
 
 import cls from './TagsListItem.module.scss';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
@@ -8,25 +9,25 @@ import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 type Props = {
   item: Tag;
   selectedTagId?: string;
-  onTagChange?: (tagId: string) => void;
+  onTagChange?: (item: Tag) => void;
 }
 
-export const TagsListItem = (props: Props) => {
+export const TagsListItem = memo((props: Props) => {
   const { item, selectedTagId, onTagChange } = props;
 
-  const isItemActive = useMemo(() => selectedTagId === item.id, [item.id, selectedTagId]);
-
   const onTagChangeHandler = useCallback(() => {
-    onTagChange?.(item.id);
-  }, [item.id, onTagChange]);
+    onTagChange?.(item);
+  }, [item, onTagChange]);
+
+  const isItemActive = selectedTagId === item.id;
 
   const mods: Mods = {
     [cls.active]: isItemActive
   };
 
   return (
-    <div onClick={onTagChangeHandler} className={classNames(cls.TagsListItem, mods)} >
+    <Card onClick={onTagChangeHandler} className={classNames(cls.TagsListItem, mods)} border={12}>
       <TagCard key={item.id} item={item} />
-    </div> 
+    </Card> 
   );
-}
+});
