@@ -1,4 +1,4 @@
-import { Tag } from "../types/course.entity";
+import { Tag } from '../types/course.entity';
 
 export const allThemesTagId = 'allThemes';
 

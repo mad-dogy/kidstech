@@ -16,5 +16,5 @@ export const App = () => {
     <ThemeProvider>
       <HomePage />
     </ThemeProvider>
-  )
-}
+  );
+};

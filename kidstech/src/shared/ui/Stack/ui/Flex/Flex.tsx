@@ -1,10 +1,17 @@
 import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode, forwardRef } from 'react';
 
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
 import { FlexAlign, FlexDirection, FlexGap, FlexJustify, FlexWrap } from '../../types/flex';
-import { alignClasses, directionClasses, gapClasses, justifyClasses, wrapClasses } from '../../constants/flexStylesMap';
+import {
+  alignClasses,
+  directionClasses,
+  gapClasses,
+  justifyClasses,
+  wrapClasses
+} from '../../constants/flexStylesMap';
 
 import cls from './Flex.module.scss';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
@@ -31,7 +38,6 @@ export const Flex: FC<FlexProps> = forwardRef((props, ref) => {
     max,
     ...otherProps
   } = props;
-
 
   const classes = [
     className,

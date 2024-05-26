@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { CourseController, Tag } from "@/entities/Course";
+import { CourseController, Tag } from '@/entities/Course';
 
 export const useTagsList = () => {
   const [tags, setTags] = useState<Tag[]>();
@@ -18,4 +18,4 @@ export const useTagsList = () => {
   return {
     tags
   };
-}
+};

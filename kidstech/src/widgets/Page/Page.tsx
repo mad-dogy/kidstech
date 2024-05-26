@@ -1,7 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-import cls from './Page.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './Page.module.scss';
 
 interface PageProps {
   className?: string;
@@ -11,9 +12,5 @@ interface PageProps {
 export const Page: FC<PageProps> = (props) => {
   const { className, children } = props;
 
-  return (
-    <div className={classNames(cls.Page, {},[className])}>
-      {children}
-    </div>
-  );
+  return <div className={classNames(cls.Page, {}, [className])}>{children}</div>;
 };

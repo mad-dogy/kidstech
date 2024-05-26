@@ -1,5 +1,6 @@
 import { CourseServer } from '../types/course.server';
 import { Course } from '../../model/types/course.entity';
+
 import { TagDto } from './tag.dto';
 
 export const CourseDto = (courseServer: CourseServer): Course => {

@@ -21,5 +21,5 @@ export const mapPaddingToClass: Record<CardPadding, string> = {
 export const mapBorderToClass: Record<CardBorder, string> = {
   0: 'border_0',
   12: 'border_12',
-  18: 'border_18',
+  18: 'border_18'
 };

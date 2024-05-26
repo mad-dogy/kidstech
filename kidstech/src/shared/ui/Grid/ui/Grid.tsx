@@ -1,5 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, memo } from 'react';
 
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
 import {
   GridAlign,
   GridAutoColumns,
@@ -10,7 +12,6 @@ import {
 import { alignClasses, gapClasses, justifyClasses } from '../model/constants/gridStylesMap';
 
 import cls from './Grid.module.scss';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
@@ -43,8 +44,6 @@ export const Grid = memo((props: GridProps) => {
     ...otherProps
   } = props;
 
-
-
   const classes = [
     className,
     justifyClasses[justifyContent],
@@ -63,7 +62,7 @@ export const Grid = memo((props: GridProps) => {
         gridTemplateRows: templateRows,
         gridAutoColumns: autoColumns,
         gridAutoRows: autoRows,
-        gridTemplateAreas: templateAreas,
+        gridTemplateAreas: templateAreas
       }}
       {...otherProps}
     >

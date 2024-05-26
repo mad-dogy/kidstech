@@ -1,13 +1,12 @@
-'use client';
-
 import { ReactNode } from 'react';
+
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
 import { FlexProps } from '../../Stack/ui/Flex/Flex';
 import { CardBorder, CardPadding, CardStack, CardType, CardVariant } from '../types/cardProps';
 import { RootElementMap, mapBorderToClass, mapPaddingToClass } from '../constants/cardMaps';
 
 import cls from './Card.module.scss';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
 type Props = {
   className?: string;

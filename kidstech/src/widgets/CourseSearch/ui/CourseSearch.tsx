@@ -10,14 +10,14 @@ import cls from './CourseSearch.module.scss';
 
 type Props = {
   className?: string;
-}
+};
 
 export const CourseSearch = memo((props: Props) => {
   const { className } = props;
 
   const [selectedTagId, setSelectedTagId] = useState(allThemesTagId);
 
-  const onTagChange = useCallback((tag: Tag)=>{
+  const onTagChange = useCallback((tag: Tag) => {
     setSelectedTagId(tag.id);
   }, []);
 
