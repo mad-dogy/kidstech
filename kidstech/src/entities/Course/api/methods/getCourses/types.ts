@@ -9,6 +9,6 @@ export type RequestServer = {
   tag?: TagServer
 };
 
-export type Response = Course[];
+export type Response = Array<Course>;
 
-export type ResponseServer = CourseServer[];
+export type ResponseServer =  Array<CourseServer>;

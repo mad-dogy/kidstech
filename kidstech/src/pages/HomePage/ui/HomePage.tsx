@@ -1,4 +1,5 @@
 import { CourseList } from '@/features/CourseList';
+import { TagsList } from '@/features/TagsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './HomePage.module.scss';
@@ -12,6 +13,7 @@ export const HomePage = (props: Props) => {
 
   return (
     <div className={classNames(cls.HomePage, {}, [className])}>
+      <TagsList />
       <CourseList />
     </div>
   );
